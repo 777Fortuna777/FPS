@@ -1,0 +1,7 @@
+FPS/Logs/
+FPS/Library/
+FPS/.vscode/
+*.csproj
+*.sln
+FPS/Temp/
+FPS/obj/
