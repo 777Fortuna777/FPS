@@ -65,8 +65,8 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 1040
-  m_MinSize: {x: 200, y: 220}
-  m_MaxSize: {x: 4000, y: 4020}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_MinSize: {x: 917, y: 344}
   m_MaxSize: {x: 22012, y: 10022}
   vertical: 0
-  controlID: 165
+  controlID: 169
 --- !u!114 &9
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -464,9 +464,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.8128333, y: 0.021020412, z: -0.7127962}
+    m_Target: {x: 0.9358357, y: 2.1354108, z: 3.955297}
     speed: 2
-    m_Value: {x: 0.8128333, y: 0.021020412, z: -0.7127962}
+    m_Value: {x: 0.9358357, y: 2.1354108, z: 3.955297}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -495,13 +495,13 @@ MonoBehaviour:
       speed: 2
       m_Value: 0
   m_Rotation:
-    m_Target: {x: -0.06584369, y: 0.93116325, z: -0.21195427, w: -0.28926644}
+    m_Target: {x: -0.30623615, y: 0.112469286, z: 0.03644449, w: 0.94461244}
     speed: 2
-    m_Value: {x: -0.06584369, y: 0.93116325, z: -0.21195427, w: -0.28926644}
+    m_Value: {x: -0.30481115, y: 0.11252098, z: 0.036274806, w: 0.9450467}
   m_Size:
-    m_Target: 11.925186
+    m_Target: 13.456785
     speed: 2
-    m_Value: 11.925186
+    m_Value: 12.877306
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -608,9 +608,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 6efbffff
+      m_SelectedIDs: 66350000
+      m_LastClickedID: 13670
+      m_ExpandedIDs: 64faffff6efbffff0a340000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -672,20 +672,19 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SkipHidden: 0
     m_SearchArea: 1
-    m_Folders:
-    - Assets/GPJ FPS Assets/Scene
+    m_Folders: []
   m_ViewMode: 0
   m_StartGridSize: 16
   m_LastFolders: []
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: E:\FPS\FPS
+  m_LastProjectPath: E:\FPS
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: ae670200
     m_LastClickedID: 157614
-    m_ExpandedIDs: 00000000942c00004e2f0000b02f0000
+    m_ExpandedIDs: 00000000a42c0000782f0000e02f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -713,7 +712,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: ffffffff00000000942c00004e2f0000b02f0000
+    m_ExpandedIDs: ffffffff00000000a42c0000de2d0000782f0000e02f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
