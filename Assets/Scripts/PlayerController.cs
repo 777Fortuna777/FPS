@@ -20,6 +20,11 @@ public class PlayerController : MonoBehaviour
     public int currentAmmo;
     public Animator gunAnim;
 
+    public int currentHealth;
+    public int maxHealth = 100;
+    public GameObject deadScreen;
+    private bool hasDied;
+
     private void Awake() 
     {
         instance = this;
@@ -28,52 +33,73 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        currentHealth = maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        //player movement
-        moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-
-        Vector3 moveHorizontal = transform.up * -moveInput.x;
-
-        Vector3 moveVertical = transform.right * moveInput.y;
-
-        TheRB.velocity = (moveHorizontal + moveVertical) * moveSpeed;
-
-        //player mouse control
-        mouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * mouseSensetivity;
-        
-        transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x,transform.rotation.eulerAngles.y,transform.rotation.eulerAngles.z -mouseInput.x);
-        
-        viewCam.transform.localRotation = Quaternion.Euler(viewCam.transform.localRotation.eulerAngles + new Vector3(0f, mouseInput.y, 0f));
-
-        //shooting
-        if(Input.GetMouseButtonDown(0))
+        if(!hasDied)
         {
-            if (currentAmmo > 0)
-            {
-                Ray ray = viewCam.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
-                RaycastHit hit;
-                if(Physics.Raycast(ray, out hit))
-                {
-                    Debug.Log("I'm looking at " + hit.transform.name);
-                    Instantiate(bulletImpact, hit.point, transform.rotation);
+            //player movement
+            moveInput = new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
 
-                    if(hit.transform.tag == "Enemy")
-                    {
-                        hit.transform.parent.GetComponent<EnemyController>().TakeDamage();
-                    }
-                }
-                else
+            Vector3 moveHorizontal = transform.up * -moveInput.x;
+
+            Vector3 moveVertical = transform.right * moveInput.y;
+
+            TheRB.velocity = (moveHorizontal + moveVertical) * moveSpeed;
+
+            //player mouse control
+            mouseInput = new Vector2(Input.GetAxis("Mouse X"), Input.GetAxis("Mouse Y")) * mouseSensetivity;
+            
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x,transform.rotation.eulerAngles.y,transform.rotation.eulerAngles.z -mouseInput.x);
+            
+            viewCam.transform.localRotation = Quaternion.Euler(viewCam.transform.localRotation.eulerAngles + new Vector3(0f, mouseInput.y, 0f));
+
+            //shooting
+            if(Input.GetMouseButtonDown(0))
+            {
+                if (currentAmmo > 0)
                 {
-                    Debug.Log("I'm looking nothing!");
+                    Ray ray = viewCam.ViewportPointToRay(new Vector3(.5f, .5f, 0f));
+                    RaycastHit hit;
+                    if(Physics.Raycast(ray, out hit))
+                    {
+                        Debug.Log("I'm looking at " + hit.transform.name);
+                        Instantiate(bulletImpact, hit.point, transform.rotation);
+
+                        if(hit.transform.tag == "Enemy")
+                        {
+                            hit.transform.parent.GetComponent<EnemyController>().TakeDamage();
+                        }
+                    }
+                    else
+                    {
+                        Debug.Log("I'm looking nothing!");
+                    }
+                    currentAmmo--;
+                    gunAnim.SetTrigger("Shoot");
                 }
-                currentAmmo--;
-                gunAnim.SetTrigger("Shoot");
             }
         }
-    }  
+    }
+    public void TakeDamage(int damageAmount)
+    {
+        currentHealth -= damageAmount;
+        if(currentHealth <= 0)
+        {
+            deadScreen.SetActive(true);
+            hasDied = true;
+        }
+    }
+
+    public void addHealth(int healAmount)
+    {
+        currentHealth += healAmount;
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+    }
 }
