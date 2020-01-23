@@ -1,34 +1,30 @@
-# =============== #
-# Unity generated #
-# =============== #
-Temp/
-Obj/
-UnityGenerated/
-Library/
-Assets/AssetStoreTools*
-
-# ===================================== #
-# Visual Studio / MonoDevelop generated #
-# ===================================== #
-ExportedObj/
-*.svd
-*.userprefs
+Library
+Library/*
 *.csproj
-*.pidb
-*.suo
-*.sln
-*.user
 *.unityproj
-*.booproj
-
-# ============ #
-# OS generated #
-# ============ #
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
+*.sln
+*.userprefs
+Temp
+obj
+/*.suo
+Assets/StreamingAssets/Music/
+Assets/StreamingAssets/Music.meta
+Xcode
+Xcode/*
+Assets/Resources/cache.xml
+Assets/Resources/cache.xml.meta
+.vs
 Thumbs.db
+Thumbs.db.meta
+/.idea/
+Assets/Plugins/Editor/JetBrains/
+Assets/Plugins/Editor/JetBrains.meta
+.vscode/
+Assets/Art/Content/**/*.prefabData.meta
+Assets/Art/Content/**/*.mesh.fbx.meta
+Assets/Art/Content/**/*.coll.fbx.meta
+
+#FMOD
+fmod_editor.log
+/Assets/FMODStudioCache.asset
+/Assets/FMODStudioCache.asset.meta
