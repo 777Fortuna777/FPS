@@ -20,6 +20,8 @@ public class PlayerController : MonoBehaviour
     public GameObject bulletImpact;
     public int currentAmmo;
     public Animator gunAnim;
+    
+    public Animator anim;
 
     public int currentHealth;
     public int maxHealth = 100;
@@ -89,6 +91,16 @@ public class PlayerController : MonoBehaviour
                     ammoText.text = currentAmmo.ToString();
                     UpdateAmmoUI();
                 }
+            }
+
+            //PlayerAnimations
+            if(moveInput != Vector2.zero)
+            {
+                anim.SetBool("IsMoving", true);
+            }
+            else
+            {
+                anim.SetBool("IsMoving", false);
             }
         }
     }
