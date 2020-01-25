@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BillBoard : MonoBehaviour
+
 {
     private SpriteRenderer theSR;
     // Start is called before the first frame update

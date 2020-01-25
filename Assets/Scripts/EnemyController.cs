@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     private float shotCounter;
     public GameObject bullet;
     public Transform firePoint;
+    public Animator EnemyAnim;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,9 @@ public class EnemyController : MonoBehaviour
                     shotCounter = fireRate;
                 }
             }
+
+            EnemyAnim.SetTrigger("EnemyWalk");
+
         }
         else
         {

@@ -61,7 +61,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb5576f0ff217454aab1267500228f68, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammoAmount: 25
+  ammoAmount: 2
 --- !u!1 &8410448951237105568
 GameObject:
   m_ObjectHideFlags: 0
@@ -119,7 +119,6 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
