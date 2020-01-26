@@ -40,6 +40,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject pauseMenuUI;
 
+    public GameObject Player;
+
     void Start()
         {
             LockCursor();
@@ -60,19 +62,23 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void Resume()
+    public void Resume()
     {
         pauseMenuUI.SetActive(false);
         Time.timeScale = 1f;
         GameIsPaused = false;
+        LockCursor();
+        Player.GetComponent<PlayerController>().enabled = true;
         Debug.Log("Resume void");
     }
 
-    void Pause()
+    public void Pause()
     {
         pauseMenuUI.SetActive(true);
         Time.timeScale = 0f;
         GameIsPaused = true;
+        UnlockCursor();
+        Player.GetComponent<PlayerController>().enabled = false;
         Debug.Log("Pause void");
     }
 
